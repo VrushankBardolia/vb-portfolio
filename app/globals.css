@@ -1,0 +1,98 @@
+@import "tailwindcss";
+
+:root {
+  --bg: #0f0f0f;
+  --bg-elevated: #111215;
+  --bg-elevated-2: #191b22;
+  --border: rgba(255, 255, 255, 0.08);
+  --border-strong: rgba(255, 255, 255, 0.16);
+  --text-primary: #f2f3f5;
+  --text-secondary: #9aa1ae;
+  --text-tertiary: #666d7a;
+  --primary: #081a2e;
+  --accent: #327be2;
+  --accent-bright: #517fc0;
+  --accent-soft: rgba(99, 91, 255, 0.15);
+  --accent-soft-border: rgba(99, 91, 255, 0.35);
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-bg-elevated: var(--bg-elevated);
+  --color-bg-elevated-2: var(--bg-elevated-2);
+  --color-border: var(--border);
+  --color-border-strong: var(--border-strong);
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-text-tertiary: var(--text-tertiary);
+  --color-primary: var(--primary);
+  --color-accent: var(--accent);
+  --color-accent-bright: var(--accent-bright);
+  --color-accent-soft: var(--accent-soft);
+  --color-accent-soft-border: var(--accent-soft-border);
+  --font-sans: var(--font-instrument);
+  --font-display: var(--font-instrument);
+  --font-serif: var(--font-lora);
+  --font-lora: var(--font-lora);
+  --font-tanker: var(--font-tanker);
+  --font-panton: var(--font-panton);
+}
+
+* {
+  border-color: var(--border);
+}
+
+html {
+  color-scheme: dark;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar,
+*::-webkit-scrollbar {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+::selection {
+  background: var(--accent-soft-border);
+  color: var(--text-primary);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+.scrollbar-none {
+  scrollbar-width: none;
+  scroll-snap-type: x proximity;
+}
+
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+
+.hero {
+  background-image: radial-gradient(ellipse 80% 60% at 50% 0%, #327be238 0%, transparent 75%);
+}
