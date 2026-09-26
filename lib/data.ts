@@ -9,7 +9,7 @@ export const personalInfo = {
 export const heroData = {
   name: "Vrushank Bardolia",
   callout: "Hii, I am Vrushank Bardolia",
-  meImage: "/images/me.png",
+  meImage: "/images/me.webp",
   headline: "I design and develop mobile apps with pixel perfection.",
   description:
     "Flutter developer who can design apps and can turn an app from a Figma file to a working app in the Play Store.",
@@ -36,14 +36,14 @@ export const designsData = {
 export const techStackData = {
 title: "Tools I work with",
   stack: [
-    { name: "Flutter", image: "flutter.png", scale: "scale-90" },
-    { name: "Dart", image: "dart.png", scale: "scale-105" },
-    { name: "Firebase", image: "firebase.png", scale: "scale-90" },
-    { name: "Figma", image: "figma.png", scale: "scale-85" },
-    { name: "Antigravity", image: "antigravity.png", scale: "scale-110" },
-    { name: "Git & Github", image: "git.png", scale: "scale-110" },
+    { name: "Flutter", image: "flutter.webp", scale: "scale-90" },
+    { name: "Dart", image: "dart.webp", scale: "scale-105" },
+    { name: "Firebase", image: "firebase.webp", scale: "scale-90" },
+    { name: "Figma", image: "figma.webp", scale: "scale-85" },
+    { name: "Antigravity", image: "antigravity.webp", scale: "scale-110" },
+    { name: "Git & Github", image: "git.webp", scale: "scale-110" },
     { name: "Android Studio", image: "android_studio.webp", scale: "scale-110" },
-    { name: "XCode", image: "xcode.png", scale: "scale-135" },
+    { name: "XCode", image: "xcode.webp", scale: "scale-135" },
   ],
 } as const;
 
