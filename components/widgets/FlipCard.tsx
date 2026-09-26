@@ -43,6 +43,7 @@ export interface FlipCardProps {
   damping?: number;
   width?: number | string;
   height?: number | string;
+  aspectRatio?: string;
   radius?: number;
   background?: string;
   color?: string;
@@ -74,6 +75,7 @@ export default function FlipCard({
   damping = 20,
   width = 300,
   height = 400,
+  aspectRatio,
   radius = 22,
   background = '#101319',
   color = '#f5f5f5',
@@ -299,6 +301,7 @@ export default function FlipCard({
           '--fc-shadow': shadowColor,
           '--fc-shadow-o': shadowOpacity,
           '--fc-glare': glareOpacity,
+          ...(aspectRatio ? { aspectRatio } : {}),
         } as React.CSSProperties
       }
     >

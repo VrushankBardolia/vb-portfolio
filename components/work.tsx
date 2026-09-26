@@ -28,17 +28,17 @@ function ProjectFlipCard({ project }: { project: Project }) {
         src={project.image || `https://picsum.photos/seed/${project.slug}/800/600`}
         alt={`${project.name} Banner`}
         fill
-        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+        sizes="(max-width: 768px) 100vw, 50vw"
         className="object-cover"
       />
     </div>
   );
 
   const backContent = (
-    <div className="flex h-full w-full flex-col justify-between p-6 text-left">
+    <div className="flex h-full w-full flex-col justify-between p-5 sm:p-6 text-left">
       <div>
         <div className="flex items-center justify-between">
-          <h3 className="font-display text-2xl font-semibold tracking-tight text-text-primary">
+          <h3 className="font-display text-xl sm:text-2xl font-semibold tracking-tight text-text-primary">
             {project.name}
           </h3>
           <span className="inline-flex items-center gap-1 font-mono text-[11px] text-text-tertiary opacity-70">
@@ -47,18 +47,18 @@ function ProjectFlipCard({ project }: { project: Project }) {
           </span>
         </div>
 
-        <p className="mt-1 text-sm font-medium text-accent-bright">
+        <p className="mt-1 text-xs sm:text-sm font-medium text-accent-bright">
           {project.tagline}
         </p>
 
-        <p className="mt-3 text-xs leading-relaxed text-text-secondary line-clamp-3">
+        <p className="mt-2 text-xs leading-relaxed text-text-secondary line-clamp-2 sm:line-clamp-3">
           {project.outcome || project.problem}
         </p>
       </div>
 
-      <div className="space-y-3.5 pt-2">
+      <div className="space-y-3 pt-2">
         <div>
-          <p className="mb-1.5 font-mono text-[10px] uppercase tracking-wider text-text-tertiary">
+          <p className="mb-1 font-mono text-[10px] uppercase tracking-wider text-text-tertiary">
             Tech Stack
           </p>
           <StackTags stack={project.stack} />
@@ -69,7 +69,7 @@ function ProjectFlipCard({ project }: { project: Project }) {
           target="_blank"
           rel="noopener noreferrer"
           onClick={(e) => e.stopPropagation()}
-          className="inline-flex w-full items-center justify-center gap-2 rounded-full border border-white/10 bg-primary px-4 py-2.5 text-xs font-medium text-white transition-all hover:border-white/20 hover:brightness-125"
+          className="inline-flex w-full items-center justify-center gap-2 rounded-full border border-white/10 bg-primary px-4 py-2 text-xs font-medium text-white transition-all hover:border-white/20 hover:brightness-125"
         >
           <span>Details</span>
           <ArrowUpRight size={14} />
@@ -83,7 +83,8 @@ function ProjectFlipCard({ project }: { project: Project }) {
       front={frontContent}
       back={backContent}
       width="100%"
-      height={300}
+      height="auto"
+      aspectRatio="16 / 9"
       radius={20}
       background="var(--bg-elevated, #111215)"
       color="var(--text-primary, #f2f3f5)"
@@ -95,7 +96,7 @@ function ProjectFlipCard({ project }: { project: Project }) {
       shadow
       shadowColor="#000000"
       shadowOpacity={0.5}
-      className="w-full"
+      className="w-full aspect-video"
     />
   );
 }
@@ -113,12 +114,19 @@ export function Work() {
           </p> */}
         </Reveal>
 
-        <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {projects.map((project, i) => (
-            <Reveal key={project.slug} delay={i * 0.1}>
-              <ProjectFlipCard project={project} />
-            </Reveal>
-          ))}
+        <div className="mt-8 grid gap-6 sm:grid-cols-2">
+          {projects.map((project, i) => {
+            const isLastOdd = projects.length % 2 !== 0 && i === projects.length - 1;
+            return (
+              <Reveal
+                key={project.slug}
+                delay={i * 0.1}
+                className={isLastOdd ? "w-full sm:col-span-2 sm:mx-auto sm:max-w-[calc(50%-12px)]" : "w-full"}
+              >
+                <ProjectFlipCard project={project} />
+              </Reveal>
+            );
+          })}
         </div>
       </div>
     </section>
