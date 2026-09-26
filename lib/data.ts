@@ -107,42 +107,43 @@ export type Project = {
 
 export const projects: Project[] = [
   {
-    slug: "ledger",
-    name: "Ledger",
-    tagline: "Expense and payment tracking for small shop owners",
+    slug: "budgetly",
+    name: "Budgetly",
+    tagline: "Budget and expense tracking Android app",
     problem:
-      "Local shop owners were tracking daily sales and dues in notebooks, with no easy way to see who owed what.",
-    role: "Designed the UI in Figma and built the full app solo end to end.",
-    stack: ["Flutter", "GetX", "Firebase", "Firestore"],
+      "People often lose track of their daily expenses and struggle to save money due to a lack of proper budgeting tools. Budgetly addresses this by providing a simple yet effective platform to monitor income and expenses, helping users make informed financial decisions.",
+    role: "Developed the whole application from planning to deployment as a solo developer.",
+    stack: ["Flutter", "GetX", "Firebase",],
     outcome:
-      "Built as a self-directed project to learn real-time data sync. Handles offline entries and syncs once the shop is back online.",
-    image: "https://picsum.photos/seed/ledger-app/800/600",
+      "Successfully developed and launched Budgetly as a solo project, creating a user-friendly app that helps individuals manage their finances effectively. The app features intuitive expense tracking, income monitoring, and provides valuable insights to support better financial planning.",
+    image: "/projects/budgetly.webp",
     featured: true,
   },
   {
-    slug: "slate",
-    name: "Slate",
-    tagline: "Booking and scheduling for solo service providers",
+    slug: "budgetly-landing-page",
+    name: "Budgetly Landing Page",
+    tagline: "Landing page for Budgetly app",
     problem:
-      "Freelance tutors and stylists were juggling WhatsApp messages to manage appointments, leading to double bookings.",
-    role: "Built the booking flow, calendar logic, and reminder system.",
-    stack: ["Flutter", "Cloud Functions", "Firebase Auth"],
+      "I wanted to create a landing page for Budgetly app to showcase its features and benefits to potential users.",
+    role: "Developed the landing page for Budgetly app.",
+    stack: ["HTML", "CSS", "JavaScript"],
     outcome:
-      "Cut manual back-and-forth by giving clients a shareable booking link with live slot availability.",
-    image: "https://picsum.photos/seed/slate-booking/800/600",
+      "Successfully developed a landing page for Budgetly app that showcases its features and benefits to potential users.",
+    image: "/projects/budgetly-landing-page.webp",
+    featured: true,
   },
-  {
-    slug: "recess",
-    name: "Recess",
-    tagline: "A gentle screen-time and focus tracker",
-    problem:
-      "Existing screen-time apps felt punishing. Wanted something that nudges instead of nags.",
-    role: "Designed and built the app, including the local usage-tracking layer.",
-    stack: ["Flutter", "Hive", "Local Notifications"],
-    outcome:
-      "Fully local-first, no account needed. Used daily by a small group of friends for three months and counting.",
-    image: "https://picsum.photos/seed/recess-app/800/600",
-  },
+  // {
+  //   slug: "recess",
+  //   name: "Recess",
+  //   tagline: "A gentle screen-time and focus tracker",
+  //   problem:
+  //     "Existing screen-time apps felt punishing. Wanted something that nudges instead of nags.",
+  //   role: "Designed and built the app, including the local usage-tracking layer.",
+  //   stack: ["Flutter", "Hive", "Local Notifications"],
+  //   outcome:
+  //     "Fully local-first, no account needed. Used daily by a small group of friends for three months and counting.",
+  //   image: "https://picsum.photos/seed/recess-app/800/600",
+  // },
 ];
 
 export type DesignScreen = {
