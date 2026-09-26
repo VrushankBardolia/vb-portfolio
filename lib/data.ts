@@ -61,10 +61,10 @@ export const footerData = {
 } as const;
 
 export const socials = [
-  { label: "GitHub", href: "https://github.com/yourusername", icon: "github" },
-  { label: "LinkedIn", href: "https://linkedin.com/in/yourusername", icon: "linkedin" },
-  { label: "Dribbble", href: "https://dribbble.com/yourusername", icon: "dribbble" },
-  { label: "Twitter", href: "https://twitter.com/yourusername", icon: "twitter" },
+  { label: "GitHub", href: "https://github.com/VrushankBardolia", icon: "github" },
+  { label: "LinkedIn", href: "https://linkedin.com/in/vrushank-bardolia", icon: "linkedin" },
+  // { label: "Dribbble", href: "https://dribbble.com/yourusername", icon: "dribbble" },
+  { label: "X", href: "https://x.com/Vrushank_VB", icon: "twitter" },
 ] as const;
 
 export const navLinks = [
