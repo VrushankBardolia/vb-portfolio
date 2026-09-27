@@ -30,9 +30,9 @@
   --color-accent-bright: var(--accent-bright);
   --color-accent-soft: var(--accent-soft);
   --color-accent-soft-border: var(--accent-soft-border);
-  --font-sans: var(--font-instrument);
-  --font-display: var(--font-instrument);
-  --font-serif: var(--font-lora);
+  --font-sans: var(--font-lora);
+  --font-display: var(--font-panton);
+  --font-serif: var(--font-panton);
   --font-lora: var(--font-lora);
   --font-tanker: var(--font-tanker);
   --font-panton: var(--font-panton);
@@ -40,6 +40,10 @@
 
 * {
   border-color: var(--border);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-panton), sans-serif;
 }
 
 html {
@@ -60,7 +64,7 @@ body::-webkit-scrollbar,
 body {
   background: var(--bg);
   color: var(--text-primary);
-  font-family: var(--font-sans);
+  font-family: var(--font-lora), serif;
   scrollbar-width: none;
   -ms-overflow-style: none;
 }

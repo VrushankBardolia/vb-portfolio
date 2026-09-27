@@ -12,7 +12,7 @@ import Image from "next/image";
 
 const navItems = [
   { id: "work", label: "Work", icon: SquaresFour },
-  { id: "designs", label: "Designs", icon: PenNib },
+  // { id: "designs", label: "Designs", icon: PenNib },
   { id: "about", label: "About", icon: UserCircle },
   { id: "contact", label: "Contact", icon: EnvelopeSimple },
 ] as const;
@@ -59,9 +59,9 @@ export function BottomNav() {
         className="flex items-center rounded-full border border-border-strong bg-bg-elevated/90 p-1.5 shadow-2xl shadow-black/50 backdrop-blur-md"
       >
         <span
-          className={"flex h-11 w-11 items-center justify-center rounded-full transition-colors text-text-secondary hover:text-text-primary"}
+          className={"flex h-8 w-8 md:h-10 md:w-10 items-center justify-center rounded-full transition-colors text-text-secondary hover:text-text-primary"}
         >
-          <Image src="/images/vb-white.svg" alt="Logo" width={24} height={24} />
+          <Image src="/images/vb-white.svg" alt="Logo" width={20} height={20} />
         </span>
       </a>
 
@@ -75,11 +75,10 @@ export function BottomNav() {
               href={`#${id}`}
               aria-label={label}
               aria-current={isActive ? "true" : undefined}
-              className={`flex h-11 w-11 items-center justify-center rounded-full transition-colors ${
-                isActive
-                  ? "bg-accent-soft text-accent-bright"
-                  : "text-text-secondary hover:text-text-primary"
-              }`}
+              className={`flex h-8 w-8 md:h-10 md:w-10 items-center justify-center rounded-full transition-colors ${isActive
+                ? "bg-accent-soft text-accent-bright"
+                : "text-text-secondary hover:text-text-primary"
+                }`}
             >
               <Icon size={20} weight={isActive ? "fill" : "regular"} />
             </a>
