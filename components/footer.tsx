@@ -30,7 +30,7 @@ export function Footer() {
         aria-hidden="true"
       />
 
-      <div className="px-6 pt-4 pb-28 md:pb-24">
+      <div className="px-4 md:px-10 pt-4 pb-28 md:pb-24">
         {/* Social Icon Buttons */}
         <div className="flex items-center justify-center gap-3 pt-6 pb-4 sm:pt-8 sm:pb-6">
           {socials.map((social) => {
@@ -61,12 +61,9 @@ export function Footer() {
         {/* Massive Bold Statement Typography */}
         <div className="w-full overflow-hidden text-center select-none">
           <h1 className="flex flex-col md:flex-row items-center justify-between md:justify-center md:gap-4 font-black uppercase tracking-tighter leading-none w-full text-textPrimary font-panton">
-            {/* Mobile pe Line 1 (Full Width) | Desktop/Tablet pe single line part */}
             <span className="text-[16vw] md:text-[9vw] lg:text-[9vw] whitespace-nowrap block w-full md:w-auto">
               VRUSHANK
             </span>
-
-            {/* Mobile pe Line 2 (Full Width) | Desktop/Tablet pe continuous text */}
             <span className="text-[16vw] md:text-[9vw] lg:text-[9vw] whitespace-nowrap block w-full md:w-auto">
               BARDOLIA
             </span>
@@ -74,8 +71,8 @@ export function Footer() {
         </div>
 
         {/* Bottom Sub-line */}
-        <div className="mx-auto max-w-6xl flex flex-col items-center justify-between gap-2 pt-4 text-sm text-text-tertiary sm:flex-row">
-          <span>Site designed & developed by {personalInfo.name}</span>
+        <div className="flex flex-col items-center justify-between gap-2 pt-4 text-sm text-text-tertiary sm:flex-row">
+          <span>Designed & Developed by {personalInfo.name}</span>
           <span>© {year} {personalInfo.name}. All rights reserved.</span>
         </div>
       </div>
