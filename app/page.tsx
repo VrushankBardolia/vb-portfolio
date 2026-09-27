@@ -14,7 +14,7 @@ export default function Home() {
         <Hero />
         <TechStack />
         <Work />
-        <Designs />
+        {/* <Designs /> */}
         <About />
         <Contact />
       </main>

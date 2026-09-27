@@ -3,7 +3,7 @@ export const personalInfo = {
   displayName: "VRUSHANK BARDOLIA",
   role: "Flutter Developer",
   location: "Surat",
-  email: "vrushankbardolia.dev@gamail.com",
+  email: "vrushankbardolia.dev@gmail.com",
 } as const;
 
 export const heroData = {
@@ -52,11 +52,11 @@ export const contactData = {
   description:
     "I am open to junior mobile developer and UI roles, freelance work, or just talking Flutter.",
   cta: "Get in touch",
-  email: "mailto:hello@yourdomain.com",
+  email: "mailto:vrushankbardolia.dev@gmail.com",
 } as const;
 
 export const footerData = {
-  text: "Built with Next.js and Tailwind.",
+  text: " © {year} {personalInfo.name}. All rights reserved.",
   author: "Vrushank",
 } as const;
 
@@ -69,7 +69,7 @@ export const socials = [
 
 export const navLinks = [
   { label: "Work", href: "#work" },
-  { label: "Designs", href: "#designs" },
+  // { label: "Designs", href: "#designs" },
   { label: "About", href: "#about" },
   { label: "Contact", href: "#contact" },
 ] as const;
@@ -186,6 +186,6 @@ export const designFolders: DesignFolder[] = [
 
 export const stats = [
   { label: "Apps shipped to Play Store", value: "2" },
-  { label: "Personal projects built", value: "9" },
+  { label: "Projects Worked On", value: "6" },
   { label: "Months of hands-on Flutter", value: "14" },
 ];
