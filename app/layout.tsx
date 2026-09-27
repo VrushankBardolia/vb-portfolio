@@ -69,10 +69,10 @@ export const metadata: Metadata = {
     siteName: "Vrushank Bardolia Portfolio",
     images: [
       {
-        url: "/images/me.webp",
-        width: 800,
-        height: 800,
-        alt: "Vrushank Bardolia",
+        url: "/images/og.png",
+        width: 1200,
+        height: 630,
+        alt: "Vrushank Bardolia | Flutter Developer & Mobile UI Designer",
       },
     ],
   },
@@ -81,8 +81,8 @@ export const metadata: Metadata = {
     title: "Vrushank Bardolia | Flutter Developer & Mobile UI Designer",
     description:
       "I design and develop mobile apps with pixel perfection. Explore my projects, UI designs, and tech stack.",
-    images: ["/images/me.webp"],
-    creator: "@yourusername",
+    images: ["/images/og.png"],
+    creator: "@Vrushank_VB",
   },
   robots: {
     index: true,
