@@ -1,25 +1,25 @@
-import { Hero } from "@/components/hero";
-import { TechStack } from "@/components/tech-stack";
-import { Work } from "@/components/work";
-import { Designs } from "@/components/designs";
-import { About } from "@/components/about";
-import { Contact } from "@/components/contact";
-import { Footer } from "@/components/footer";
-import { BottomNav } from "@/components/bottom-nav";
+import {
+  Header,
+  HeroSection,
+  ToolsSection,
+  ProjectsSection,
+  AboutSection,
+  ContactSection,
+  Footer,
+} from "@/components/sections";
 
 export default function Home() {
   return (
-    <>
+    <div className="max-w-2xl min-h-screen mx-auto px-5 text-left border-l border-r border-[var(--line)]">
+      <Header />
       <main>
-        <Hero />
-        <TechStack />
-        <Work />
-        {/* <Designs /> */}
-        <About />
-        <Contact />
+        <HeroSection />
+        <ToolsSection />
+        <ProjectsSection />
+        <AboutSection />
+        <ContactSection />
       </main>
       <Footer />
-      <BottomNav />
-    </>
+    </div>
   );
 }

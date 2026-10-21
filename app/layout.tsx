@@ -1,160 +1,92 @@
-import type { Metadata } from "next";
-import { Instrument_Sans, Lora } from "next/font/google";
-import localFont from "next/font/local";
+import type { Metadata, Viewport } from "next";
+import { Schibsted_Grotesk, Instrument_Sans } from "next/font/google";
 import "./globals.css";
-import { socials } from "@/lib/data";
+import { site } from "@/data/content";
 
-const panton = localFont({
-  src: "../public/fonts/panton.black-caps.otf",
-  variable: "--font-panton",
+const sans = Schibsted_Grotesk({
+  subsets: ["latin"],
+  variable: "--font-sans",
   display: "swap",
 });
 
-const tanker = localFont({
-  src: "../public/fonts/Tanker-Regular.woff",
-  variable: "--font-tanker",
+const display = Instrument_Sans({
+  subsets: ["latin"],
+  variable: "--font-display",
   display: "swap",
 });
 
-const instrument = Instrument_Sans({
-  variable: "--font-instrument",
-  subsets: ["latin"],
-});
-
-const lora = Lora({
-  variable: "--font-lora",
-  subsets: ["latin"],
-});
-
-const SITE_URL = "https://vrushank.pages.dev";
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+};
 
 export const metadata: Metadata = {
-  metadataBase: new URL(SITE_URL),
-  title: {
-    default: "Vrushank Bardolia | Flutter Developer & Mobile UI Designer",
-    template: "%s | Vrushank Bardolia",
+  metadataBase: new URL(site.url),
+  title: "Vrushank Bardolia | Flutter & Frontend Developer",
+  description: site.description,
+  alternates: {
+    canonical: site.url,
   },
-  description:
-    "Portfolio of Vrushank Bardolia, a Flutter developer and UI/UX designer building high-performance mobile applications and beautiful user interfaces.",
   keywords: [
     "Vrushank Bardolia",
     "Flutter Developer",
+    "Frontend Developer",
+    "Next.js Developer",
+    "React Developer",
     "Mobile Developer",
     "Dart Developer",
     "UI UX Designer",
-    "Figma to Flutter",
-    "Next.js Portfolio",
+    "Tailwind CSS",
     "Android App Developer",
-    "iOS Developer",
     "Surat Developer",
   ],
-  authors: [{ name: "Vrushank Bardolia", url: SITE_URL }],
-  creator: "Vrushank Bardolia",
-  publisher: "Vrushank Bardolia",
-  formatDetection: {
-    email: false,
-    address: false,
-    telephone: false,
-  },
-  alternates: {
-    canonical: "/",
-  },
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: SITE_URL,
-    title: "Vrushank Bardolia | Flutter Developer & Mobile UI Designer",
-    description:
-      "I design and develop mobile apps with pixel perfection. Explore my projects, UI designs, and tech stack.",
-    siteName: "Vrushank Bardolia Portfolio",
+    url: site.url,
+    title: "Vrushank Bardolia | Flutter & Frontend Developer",
+    description: site.description,
+    siteName: site.name,
     images: [
       {
         url: "/images/og.png",
         width: 1200,
         height: 630,
-        alt: "Vrushank Bardolia | Flutter Developer & Mobile UI Designer",
+        alt: "Vrushank Bardolia | Flutter & Frontend Developer",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Vrushank Bardolia | Flutter Developer & Mobile UI Designer",
-    description:
-      "I design and develop mobile apps with pixel perfection. Explore my projects, UI designs, and tech stack.",
+    title: "Vrushank Bardolia | Flutter & Frontend Developer",
+    description: site.description,
     images: ["/images/og.png"],
     creator: "@Vrushank_VB",
   },
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      "max-video-preview": -1,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-    },
+  icons: {
+    icon: "/favicon.ico",
   },
-};
-
-const jsonLd = {
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "Person",
-      "@id": `${SITE_URL}/#person`,
-      name: "Vrushank Bardolia",
-      jobTitle: "Flutter Developer & UI Designer",
-      url: SITE_URL,
-      image: `${SITE_URL}/images/me.webp`,
-      description:
-        "Flutter developer who designs apps and turns Figma designs into production-ready mobile apps.",
-      sameAs: [
-        socials[0].href,
-        socials[1].href,
-        socials[2].href,
-      ],
-      knowsAbout: [
-        "Flutter",
-        "Dart",
-        "Firebase",
-        "Figma",
-        "Mobile App Development",
-        "UI/UX Design",
-        "Android Development",
-        "iOS Development",
-      ],
-    },
-    {
-      "@type": "WebSite",
-      "@id": `${SITE_URL}/#website`,
-      url: SITE_URL,
-      name: "Vrushank Bardolia Portfolio",
-      description:
-        "Portfolio of Vrushank Bardolia, showcasing mobile projects and UI designs.",
-      publisher: {
-        "@id": `${SITE_URL}/#person`,
-      },
-      inLanguage: "en-US",
-    },
-  ],
 };
 
 export default function RootLayout({
   children,
-}: Readonly<{ children: React.ReactNode }>) {
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
   return (
     <html
       lang="en"
-      className={`${panton.variable} ${tanker.variable} ${instrument.variable} ${lora.variable} h-full antialiased`}
+      suppressHydrationWarning
+      className={`${sans.variable} ${display.variable}`}
     >
       <head>
         <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+          dangerouslySetInnerHTML={{
+            __html: `(function(){try{var t=localStorage.getItem("theme");if(t==="light"||t==="dark"){document.documentElement.dataset.theme=t;}}catch(e){}})();`,
+          }}
         />
       </head>
-      <body className="min-h-full bg-bg text-text-primary">{children}</body>
+      <body suppressHydrationWarning>{children}</body>
     </html>
   );
 }
