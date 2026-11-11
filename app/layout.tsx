@@ -49,7 +49,7 @@ export const metadata: Metadata = {
     siteName: site.name,
     images: [
       {
-        url: "/images/og.png",
+        url: "/images/og.webp",
         width: 1200,
         height: 630,
         alt: "Vrushank Bardolia | Flutter & Frontend Developer",
@@ -60,7 +60,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Vrushank Bardolia | Flutter & Frontend Developer",
     description: site.description,
-    images: ["/images/og.png"],
+    images: ["/images/og.webp"],
     creator: "@Vrushank_VB",
   },
   icons: {

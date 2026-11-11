@@ -23,7 +23,8 @@ export const tools = [
   "Tailwind CSS",
   "Firebase",
   "Figma",
-  "Git & GitHub",
+  "Git",
+  "GitHub",
   "Android Studio",
   "Xcode",
 ] as const;
