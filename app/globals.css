@@ -228,6 +228,54 @@ a.nav-link-silver:hover {
   animation: roleSlideIn 0.45s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
+/* Hero Entrance Animations (Smooth frame-0 render, 0ms JS delay, no FOUC, SEO-safe) */
+@keyframes heroFadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes heroAvatarPop {
+  0% {
+    opacity: 0;
+    transform: scale(0.88);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.hero-animate-avatar {
+  animation: heroAvatarPop 0.5s cubic-bezier(0.16, 1, 0.3, 1) both;
+  will-change: transform, opacity;
+}
+
+.hero-animate-title {
+  animation: heroFadeUp 0.5s cubic-bezier(0.16, 1, 0.3, 1) 0.12s both;
+  will-change: transform, opacity;
+}
+
+.hero-animate-role {
+  animation: heroFadeUp 0.5s cubic-bezier(0.16, 1, 0.3, 1) 0.22s both;
+  will-change: transform, opacity;
+}
+
+.hero-animate-summary {
+  animation: heroFadeUp 0.5s cubic-bezier(0.16, 1, 0.3, 1) 0.32s both;
+  will-change: transform, opacity;
+}
+
+.hero-animate-cta {
+  animation: heroFadeUp 0.45s cubic-bezier(0.16, 1, 0.3, 1) 0.42s both;
+  will-change: transform, opacity;
+}
+
 /* Prefers Reduced Motion */
 @media (prefers-reduced-motion: reduce) {
   html {

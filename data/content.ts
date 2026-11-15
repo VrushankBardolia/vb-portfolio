@@ -1,7 +1,7 @@
 export const site = {
   name: "Vrushank Bardolia",
   role: "Flutter & Frontend Developer",
-  url: "https://vrushank.pages.dev",
+  url: "https://vrushank.devs.surf",
   email: "vrushankbardolia.dev@gmail.com",
   resume: "https://vrushankbardolia.github.io/resume/",
   description:
