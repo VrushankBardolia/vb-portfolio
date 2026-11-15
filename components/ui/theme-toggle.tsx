@@ -1,25 +1,37 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useSyncExternalStore } from "react";
 import { Moon, Sun } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
-export function ThemeToggle() {
-  const [theme, setTheme] = useState<"light" | "dark">("light");
+function subscribe(callback: () => void) {
+  window.addEventListener("storage", callback);
+  const mq = window.matchMedia("(prefers-color-scheme: dark)");
+  mq.addEventListener("change", callback);
+  return () => {
+    window.removeEventListener("storage", callback);
+    mq.removeEventListener("change", callback);
+  };
+}
 
-  useEffect(() => {
-    try {
-      const stored = localStorage.getItem("theme");
-      if (stored === "light" || stored === "dark") {
-        setTheme(stored);
-      } else {
-        const isDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-        setTheme(isDark ? "dark" : "light");
-      }
-    } catch {
-      // LocalStorage access may be restricted
-    }
-  }, []);
+function getSnapshot(): "light" | "dark" {
+  try {
+    const stored = localStorage.getItem("theme");
+    if (stored === "light" || stored === "dark") return stored;
+    return window.matchMedia("(prefers-color-scheme: dark)").matches
+      ? "dark"
+      : "light";
+  } catch {
+    return "light";
+  }
+}
+
+function getServerSnapshot(): "light" | "dark" {
+  return "light";
+}
+
+export function ThemeToggle() {
+  const theme = useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot);
 
   const toggleTheme = () => {
     try {
@@ -31,7 +43,8 @@ export function ThemeToggle() {
       const nextTheme = currentTheme === "dark" ? "light" : "dark";
       document.documentElement.dataset.theme = nextTheme;
       localStorage.setItem("theme", nextTheme);
-      setTheme(nextTheme);
+      // Dispatch storage event for synchronizing same-window listeners
+      window.dispatchEvent(new Event("storage"));
     } catch {
       // LocalStorage access may be restricted
     }
